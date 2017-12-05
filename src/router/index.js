@@ -4,6 +4,7 @@ import Router from 'vue-router';
 const App = resolve => require(['@/App'], resolve);
 const Home = resolve => require(['@/pages/home'], resolve);
 const Index = resolve => require(['@/pages/index'], resolve);
+const Resume = resolve => require(['@/pages/resume'], resolve);
 
 
 
@@ -18,13 +19,20 @@ export default new Router({
       children: [
         {
           path: '',
-          name: 'index',
-          component: Index,
+          redirect: '/home'
+        },
+        {
+          path:'',
+          component:Index,
           children:[
             {
               path: '/home',
               name: 'home',
               component: Home
+            },
+            {
+              path:'resume',
+              component:Resume
             }
           ]
         }
