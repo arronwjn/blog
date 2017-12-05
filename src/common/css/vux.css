@@ -1,0 +1,26 @@
+
+.weui-search-bar{
+    font-size:0.16rem;
+}
+.search .vux-search-box{
+    width: 3.2rem;
+    float:left;
+    margin-left: 0.13rem;
+}
+.search .weui-search-bar{
+    padding:0rem 0rem;
+    background-color: rgb(238,238,238);
+    border-radius: 0.05rem;
+}
+.search .weui-search-bar__box{
+    background-color: rgb(238,238,238);
+}
+.search .weui-search-bar__label{
+    background-color: rgb(238,238,238);
+}
+.info_home .vux-tab{
+    height: 0.5rem;
+}
+.info_home .vux-tab .vux-tab-item{
+    line-height: 0.5rem;
+}
