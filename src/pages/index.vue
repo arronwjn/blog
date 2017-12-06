@@ -31,16 +31,26 @@
                 <p>吉林 长春 长春工业大学</p>
                 <p>待我代码打完，娶你为妻可好</p>
               </div>
+              <div class="sidebar-bottom">
+                <nav class="sidebar-bottom-inner">
+                  <div class="sidebar-bottom-item">
+                    <span>文章</span>
+                    <span>10</span>
+                  </div>
+                  <div class="sidebar-bottom-item">
+                    <span>留言</span>
+                    <span>25</span>
+                  </div>
+                  <div class="sidebar-bottom-item">
+                    <span>简历</span>
+                    <span>30</span>
+                  </div>
+                </nav>
+                <div></div>
+              </div>
             </div>
           </div>
           <div class="right">
-            <div class="sidebar">
-              <div class="top">
-                <div class="avater">
-                  <img src="" alt="">
-                </div>
-              </div>
-            </div>
             <router-view></router-view>
           </div>
         </div>
