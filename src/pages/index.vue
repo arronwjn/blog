@@ -3,7 +3,6 @@
       <div class="main">
         <div class="head"></div>
         <div class="main-inner">
-          
           <div class="left">
             <div class="header">
               <p>arronwjn</p>
@@ -22,6 +21,13 @@
           </div>
           <div class="bar"></div>
           <div class="right">
+            <div class="sidebar">
+              <div class="top">
+                <div class="avater">
+                  <img src="" alt="">
+                </div>
+              </div>
+            </div>
             <router-view></router-view>
           </div>
         </div>
@@ -94,6 +100,7 @@
   flex:0;
   border-radius: 5px;
   background-color:#fff;
+  z-index:999;
 }
 .left ul li{
   display: block;
@@ -114,10 +121,20 @@
   background-color: #e9eaee;
 }
 .right{
+  position: absolute;
+  top:0;
+  right:0;
   display: inline-block;
-  width:100%;
+  width:78%;
   height:100%;
   border-radius: 5px;
+  background-color:#fff;
+}
+.sidebar{
+  position: fixed;
+  top:0;
+  left:0;
+  padding:20px 10px;
 }
 @media screen and (max-width: 769px) {
   .index{
@@ -127,6 +144,7 @@
     width:100%;
     height:45px;
     border-right:none;
+    margin-top:250px;
     border-top:1px solid rgb(220,220,220);
     background-color:rgba(255,255,255,0.95);
     /* -webkit-filter:blur(1px); */
