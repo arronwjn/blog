@@ -227,9 +227,11 @@
   border-bottom: 1px solid #ccc;
 }
 .right{
-  position: absolute;
+  /*position: absolute;
   top:0;
-  right:0;
+  right:0;*/
+  float: right;
+  margin-left: 20px;
   display: inline-block;
   width:calc(100% - 260px);
   min-height:100%;
@@ -249,13 +251,14 @@
   top:0;
   left:0;
   width:250px;
+  height:0;
   margin-top: 250px;
   border-radius: 5px;
-  background-color: #fff;
   box-shadow: 0px 0px 4px #cecece;
 }
 .sidebar-inner{
   padding:10px;
+  background-color: #fff;
 }
 .sidebar-top{
   padding-bottom:10px;
