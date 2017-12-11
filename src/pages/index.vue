@@ -147,7 +147,7 @@
   width:76%;
   height:100%;
   border-radius: 5px;
-  background-color:#fff;
+  /* background-color:#fff; */
 }
 .sidebar{
   position: fixed;
