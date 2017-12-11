@@ -15,7 +15,7 @@ const AppPlatform = 'mobile web'
 /*
  *  项目存储前缀名称
 */
-const AppStorageName =  `CaoXianSheng`
+const AppStorageName =  `CIO`
 
 
 /*

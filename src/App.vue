@@ -16,7 +16,7 @@ export default {
 
 <style>
   /* @import '~vux/src/styles/reset'; */
-  @import './common/css/reset';
+  @import './common/css/reset.css';
   
   #app{
     width: 100%;

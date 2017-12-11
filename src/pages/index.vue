@@ -20,7 +20,7 @@
             </ul>
           </div>
           <div class="sidebar">
-            <div class="sidebar-inner">
+            <div class="sidebar-inner" id="sidebar" :class="searchBarFixed == true ? 'isFixed' :''">
               <div class="sidebar-top">
                 <div class="avater">
                   <img src="../assets/arronwjn.jpg" alt="">
@@ -70,11 +70,28 @@
 </template>
 
 <script>
-// 更改测试
   export default{
     name:'index',
     data () {
-      return {}
+      return {
+        searchBarFixed:false
+      }
+    },
+    mounted(){
+      window.addEventListener('scroll', this.handleScroll)
+    },
+    methods:{
+      //处理滚动吸顶效果
+      handleScroll(){
+        var that=this;
+         var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+         var offsetTop = document.getElementById('sidebar').offsetTop
+          if (scrollTop - 250 > offsetTop || scrollTop>250) {
+            that.searchBarFixed = true
+          } else {
+            that.searchBarFixed = false
+          }
+      }
     }
   }
 </script>
@@ -99,7 +116,7 @@
   position: relative;
   display: flex;
   flex-direction:row;
-  width:1200px;
+  width:80%;
   height:80%;
   margin:0 auto;
   /* background-color:#fff; */
@@ -135,6 +152,7 @@
   border-radius: 5px;
   background-color:#fff;
   z-index:999;
+  box-shadow: 0px 0px 4px #cecece;
 }
 .left ul li{
   display: block;
@@ -213,25 +231,28 @@
   top:0;
   right:0;
   display: inline-block;
-  width:78%;
-  width:76%;
+  width:calc(100% - 260px);
+  min-height:100%;
   border-radius: 5px;
-  background-color:#fff;
+  /* background-color:#fff; */
 }
-.sidebar{
-  position: fixed;
+.index .isFixed{
+  width: 230px;
+  position:fixed;
+  background-color:#Fff;
   top:0;
-  left:0;
-  padding:20px 10px;
+  z-index:999;
+  margin-top:0;
 }
 .sidebar{
   position: static;
   top:0;
   left:0;
-  width:230px;
+  width:250px;
   margin-top: 250px;
   border-radius: 5px;
   background-color: #fff;
+  box-shadow: 0px 0px 4px #cecece;
 }
 .sidebar-inner{
   padding:10px;
@@ -269,18 +290,26 @@
   border-radius: 50%;
   box-sizing: border-box;
 }
-@media screen and (max-width: 769px) {
-  .index{
-    flex-direction:column-reverse;
+@media screen and (max-width:756px){
+  .main-inner{
+    width:100%;
+    height:100%;
+    flex-direction: column;
+  }
+  .head{
+    display:none;
+  }
+  .header{
+    border-top-left-radius:0px;
+    border-top-right-radius:0px;
   }
   .left{
     width:100%;
-    height:45px;
-    border-right:none;
-    margin-top:250px;
-    border-top:1px solid rgb(220,220,220);
-    background-color:rgba(255,255,255,0.95);
-    /* -webkit-filter:blur(1px); */
+    height: auto;
+    position: static;
+  }
+  .sidebar{
+    display:none;
   }
   .left ul{
     display: flex;
@@ -291,5 +320,16 @@
   .left ul li{
     font-size:0.16rem;
   }
+  .right{
+    position: static;
+    width:100%;
+    height:100%;
+    border-radius: 0;
+  }
+}
+@media screen and (min-width:756px) and (max-width:1537px){
+  /* .main-inner{
+    max-width:1135px;
+  } */
 }
 </style>
