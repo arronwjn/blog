@@ -109,6 +109,7 @@
 .list-item{
   padding:30px;
   margin-bottom: 30px;
+  box-shadow: 0px 0px 4px #cecece;
   background-color: #fff;
 }
 .list-item:last-child{
@@ -136,7 +137,7 @@
   color:#555;
 }
 .list-body-content{
-  height:60px;
+  height:48px;
   vertical-align: middle;
   text-overflow: -o-ellipsis-lastline;
   overflow: hidden;
@@ -144,6 +145,7 @@
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+  font-size:12px;
 }
 .list-more{
   text-align: center;
@@ -156,7 +158,7 @@
   text-decoration: none;
   color:#46b882;
   border:2px solid #46b882;
-  font-size:14px;
+  font-size:12px;
 }
 .list-more a:hover{
   background-color: #46b882;
