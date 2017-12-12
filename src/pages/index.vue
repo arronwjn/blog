@@ -164,7 +164,6 @@
   width:calc(100% - 260px);
   min-height:100%;
   border-radius: 5px;
-  /* background-color:#fff; */
 }
 .index .isFixed{
   width: 230px;
