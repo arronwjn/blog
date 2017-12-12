@@ -227,6 +227,7 @@
   border-bottom: 1px solid #ccc;
 }
 .right{
+
   float: right;
   margin-left: 20px;
   display: inline-block;
