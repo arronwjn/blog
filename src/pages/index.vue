@@ -10,13 +10,17 @@
             </div>
             <ul>
               <li>
-                <router-link :to="{path:'home'}">首页</router-link>
+                <router-link :to="{path:'home'}"><i class="fa fa-home" aria-hidden="true"></i>首页</router-link>
               </li>
               <li>
-                <router-link :to="{path:'resume'}">关于</router-link>
+                <i class="fa fa-share-alt-square" aria-hidden="true"></i>分享
               </li>
-              <li>标签</li>
-              <li>关于</li>
+              <li><i class="fa fa-tags" aria-hidden="true"></i>标签</li>
+              <li>
+                <router-link :to="{path:'resume'}">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i>关于
+                </router-link>
+              </li>
             </ul>
           </div>
           <div class="sidebar">
@@ -28,8 +32,8 @@
                 <p>arronwjn</p>
               </div>
               <div class="sidebar-min">
-                <p>吉林 长春 长春工业大学</p>
-                <p>待我代码打完，娶你为妻可好</p>
+                <p><i class="fa fa-street-view" aria-hidden="true"></i>吉林 长春 长春工业大学</p>
+                <p><i class="fa fa-pencil" aria-hidden="true"></i>待我代码打完，娶你为妻可好</p>
               </div>
               <div class="sidebar-bottom">
                 <nav class="sidebar-bottom-inner">
@@ -47,17 +51,19 @@
                   </div>
                 </nav>
                 <div class="link-wrapper">
-                  <div class="link-item">
-                    Github
-                  </div>
-                  <div class="link-item">
-                    E-Mail
-                  </div>
+                  <a class="link-item" href="https://github.com/arronwjn">
+                    <i class="fa fa-github" aria-hidden="true"></i>
+                    <span>Github</span>
+                  </a>
+                  <a class="link-item" href="https://arronwjn.github.io/#toc">
+                    <i class="fa fa-book" aria-hidden="true"></i>
+                    <span>E-Mail</span>
+                  </a>
                 </div>
               </div>
               <div class="links-module">
                 <h3>友情链接</h3>
-                <a href="#">Figing</a>
+                <a href="https://github.com/fightingljm">Figing</a>
               </div>
             </div>
           </div>
@@ -91,7 +97,8 @@
           } else {
             that.searchBarFixed = false
           }
-      }
+      },
+      
     }
   }
 </script>
@@ -99,7 +106,7 @@
 <style scoped>
 .index{
   width:100%;
-  /*height:100%;*/
+  min-height:100%;
   font-size:0;
   background-color:#e9eaee;
 }
@@ -118,6 +125,7 @@
   flex-direction:row;
   width:80%;
   height:80%;
+  padding-bottom:60px;
   margin:0 auto;
   /* background-color:#fff; */
 }
@@ -161,8 +169,12 @@
   line-height: 36px;
   text-align: center;
   list-style: none;
-  font-size:14px;
+  font-size:12px;
   color:rgb(121,122,127);
+}
+.left ul li i{
+  font-size: 12px;
+  margin-right: 5px;
 }
 .router-link-active{
   color:rgb(255,160,0);
@@ -178,10 +190,16 @@
   font-size:16px;
 }
 .sidebar-bottom-item{
+  width:100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  border-right:1px solid #faf3f3;
+  cursor: pointer;
+}
+.sidebar-bottom-item:last-child{
+  border-right:none;
 }
 .sidebar-item-name{
   font-size:14px;
@@ -204,12 +222,20 @@
   vertical-align: top;
 }
 .link-item{
-  padding:10px 0;
-  font-size: 14px;
-  color:#555;
+  line-height: 2;
+  padding: 0 5px;
+  margin-bottom: 5px;
+  vertical-align: top;
+  font-size: 12px;
+  color: #555;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  cursor: pointer;
+}
+.link-item:hover{
+  background-color: #f5f3f3;
+  border-radius: 5px;
 }
 .links-module{
   font-size:0;
@@ -221,9 +247,12 @@
   font-weight: bold;
 }
 .links-module a{
+  padding-bottom: 5px;
   font-size:13px;
   color:#999;
   font-weight: bold;
+}
+.links-module a:hover{
   border-bottom: 1px solid #ccc;
 }
 .right{
@@ -246,13 +275,15 @@
   position: static;
   top:0;
   left:0;
-  width:250px;
+  width:254px;
   height:0;
   margin-top: 250px;
   border-radius: 5px;
   box-shadow: 0px 0px 4px #cecece;
 }
 .sidebar-inner{
+  width:230px;
+  border-radius: 5px;
   padding:10px;
   background-color: #fff;
 }
@@ -264,6 +295,9 @@
   padding:10px 0;
   line-height: 30px;
   border-bottom: 1px solid #ccc;
+}
+.sidebar-min i{
+  margin-right: 5px;
 }
 .sidebar-min p{
   text-align: left;
@@ -321,6 +355,7 @@
   }
   .right{
     position: static;
+    margin-left: 0;
     width:100%;
     height:100%;
     border-radius: 0;
