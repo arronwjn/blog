@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <c-site></c-site>
     <div class="main">
-      <div class="list-item">
+      <div class="list-item" @click="jump('detail')">
         <h3>vue基础知识</h3>
         <div class="list-meta">
           <span>发表于2017-12-11 </span>
@@ -15,10 +16,10 @@
             七牛对象存储 实用的对象存储和 CDN
           </div>
         </div>
-        <div class="list-more"><a href="">阅读全文</a></div>
+        <div class="list-more"><a @click="jump('detail')">阅读全文</a></div>
       </div>
 
-      <div class="list-item">
+      <div class="list-item" @click="jump('detail')">
         <h3>vue基础知识</h3>
         <div class="list-meta">
           <span>发表于2017-12-11 </span>
@@ -32,10 +33,10 @@
             七牛对象存储 实用的对象存储和 CDN
           </div>
         </div>
-        <div class="list-more"><a href="">阅读全文</a></div>
+        <div class="list-more"><a @click="jump('detail')">阅读全文</a></div>
       </div>
 
-      <div class="list-item">
+      <div class="list-item" @click="jump('detail')">
         <h3>vue基础知识</h3>
         <div class="list-meta">
           <span>发表于2017-12-11 </span>
@@ -49,10 +50,10 @@
             七牛对象存储 实用的对象存储和 CDN
           </div>
         </div>
-        <div class="list-more"><a href="">阅读全文</a></div>
+        <div class="list-more"><a @click="jump('detail')">阅读全文</a></div>
       </div>
 
-      <div class="list-item">
+      <div class="list-item" @click="jump('detail')">
         <h3>vue基础知识</h3>
         <div class="list-meta">
           <span>发表于2017-12-11 </span>
@@ -66,7 +67,7 @@
             七牛对象存储 实用的对象存储和 CDN
           </div>
         </div>
-        <div class="list-more"><a href="">阅读全文</a></div>
+        <div class="list-more"><a @click="jump('detail')">阅读全文</a></div>
       </div>
 
       <div class="list-item">
@@ -155,11 +156,20 @@
 </template>
 
 <script>
+  import cSite from '@/components/cSite.vue';
 
   export default{
     name:'index',
     data () {
       return {}
+    },
+    methods:{
+      jump(title){
+        this.$router.push({path:title,query:{id:1}});
+      }
+    },
+    components:{
+      cSite
     }
   }
 </script>
@@ -175,6 +185,7 @@
   margin-bottom: 30px;
   box-shadow: 0px 0px 4px #cecece;
   background-color: #fff;
+  cursor: pointer;
 }
 .list-item:last-child{
   margin-bottom: 0;
