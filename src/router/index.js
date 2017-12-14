@@ -5,6 +5,8 @@ const App = resolve => require(['@/App'], resolve);
 const Home = resolve => require(['@/pages/home'], resolve);
 const Index = resolve => require(['@/pages/index'], resolve);
 const Resume = resolve => require(['@/pages/resume'], resolve);
+const Project = resolve => require(['@/pages/project'], resolve);
+const ArticleDetail = resolve => require(['@/pages/article_detail'], resolve);
 
 
 
@@ -33,6 +35,14 @@ export default new Router({
             {
               path:'resume',
               component:Resume
+            },
+            {
+              path: 'project',
+              component: Project
+            },
+            {
+              path: 'detail',
+              component: ArticleDetail
             }
           ]
         }

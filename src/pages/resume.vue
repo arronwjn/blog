@@ -1,5 +1,6 @@
 <template>
   <div class="resume">
+      <c-site></c-site>
       <div class='about-warp'>
         <div class='about' >
           <ul>
@@ -71,7 +72,7 @@
             <li>
               <dt><i class="fa fa-location-arrow" aria-hidden="true"></i><span>自我评价</span></dt>
               <p class="content">
-                  责任心没话说，喜欢专研新知识，了解react+express前后台分离的组件化开发模式，掌握vue框架和javascript语言，掌握html+css和jquery，熟悉前端工程话，如webpack,npm，熟悉es6
+                  责任心没话说，喜欢专研新知识，了解react+express前后台分离的组件化开发模式，掌握vue框架和javascript语言，掌握html+css和jquery，熟悉前端工程化，如webpack,npm，熟悉es6
               </p>
             </li>
           </ul>
@@ -82,6 +83,8 @@
 
 <script>
     import vButton from '@/components/vButton.vue';
+    import cSite from '@/components/cSite.vue';
+
     var echarts = require('echarts');
 
     export default{ 
@@ -154,6 +157,7 @@
         },
         components:{
             vButton,
+            cSite
         }
     }
 </script>
@@ -202,7 +206,7 @@
 .about>ul>li>dd{
   line-height: 30px;
   padding: 5px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .about>ul>li:nth-child(3)>dd{
   display: flex;
@@ -237,6 +241,7 @@
 }
 .about>ul>li>dd>ul>li>h3{
   color:#0097A7;
+  font-weight: 600;
 }
 .about>ul>li>dd>ul>li>p{
   color:rgba(0,0,0,0.6);
@@ -248,5 +253,6 @@
 .content{
     line-height: 2;
     text-align:justify;
+    font-size: 12px;
 }
 </style>
